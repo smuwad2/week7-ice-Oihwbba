@@ -1,8 +1,49 @@
 <script>
+import { computed } from 'vue';
+
     export default { 
+        data() {
+            return {
+                operators: ['+','-','*','/', '%'],
+                y: [],
+                x: [],
+                selectedOp: '',
+                
+            }
+        },
+        computed:{
+            result() {
+                if (this.selectedOp == '+') {
+                    return this.y+this.x
+                }
+
+                else if (this.selectedOp == '-') {
+                    return this.y-this.x
+                }
+                else if (this.selectedOp == '*') {
+                    return this.y*this.x
+                }
+                else if (this.selectedOp == '/') {
+                    return this.y/this.x
+                }
+                else if (this.selectedOp == '%') {
+                    return this.y%this.x
+                }
+
+
+                
+                        
+
+                    
+
+
+                }
+        
+
         // Add Code Here to complete the task
         // Note: DO NOT USE "eval()". In security, "eval" is considered "evil"!!!
     }
+}
 </script>
 
 <template>
